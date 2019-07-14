@@ -12,9 +12,9 @@ Before("@login") do
     @login_page.with(CONFIG['users']['cat_manager']['email'], CONFIG['users']['cat_manager']['pass'])
 end
 
-After do
-    temp_shot = page.save_screenshot("log/temp_shot.png")
-    screenshot = Base64.encode64(File.open(temp_shot, 'rb').read)
+After do |scenario|
+    temp_shot = page.save_screenshot("log/#{scenario.__id__}.png")
+    # screenshot = Base64.encode64(File.open(temp_shot, 'rb').read)
     embed(screenshot, "image/png", "Screenshot")
     
 end
