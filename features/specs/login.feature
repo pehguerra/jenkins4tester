@@ -7,7 +7,7 @@ Funcionalidade: Login
     Posso acessar o sistema com meu email e senha
 
 
-    @login_happy
+    @login_happy @smoke
     Cenário: Acesso
         Quando eu faço login com "tony@stark.com" e "pwd123"
         Então devo ser autenticado
