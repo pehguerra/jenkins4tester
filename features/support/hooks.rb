@@ -13,8 +13,7 @@ Before("@login") do
 end
 
 After do |scenario|
-    temp_shot = page.save_screenshot("log/#{scenario.__id__}.png")
+    screenshot = page.save_screenshot("log/#{scenario.__id__}.png")
     # screenshot = Base64.encode64(File.open(temp_shot, 'rb').read)
     embed(screenshot, "image/png", "Screenshot")
-    
 end
